@@ -2,5 +2,6 @@ var path = require('path');
 var express = require('express');
 var app = express();
 
-app.use('/', express.static(path.join(__dirname, '../dist')));
+// You probably want to change 'dist/' to '../dist/' for production
+app.use('/', express.static(path.join(__dirname, 'dist/')));
 app.listen(9000);

@@ -5,3 +5,5 @@ var app = express();
 // You probably want to change 'dist/' to '../dist/' for production
 app.use('/', express.static(path.join(__dirname, 'dist/')));
 app.listen(9000);
+
+console.log('Server started: http://localhost:9000/');

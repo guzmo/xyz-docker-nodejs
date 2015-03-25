@@ -1,21 +1,18 @@
-# Vi behöver en bas-image (samma som användes i run-kommandot)
+# Use the standard nodejs image as a base
 FROM dockerfile/nodejs
 
-RUN npm install -g pm2
-
-ADD package.json /app/package.json
-
 # Install production dependencies.
+ADD package.json /app/package.json
 RUN cd /app && npm install --production
 
 # Add the rest of the project to a folder app in the container.
 ADD . /app
 
-# Ställ in working directory för appen:
+# Set working directory for the app:
 WORKDIR /app
 
-# Exponera rätt port (plockas automatiskt upp av Katalog som ser till att Nginx redirectar till denna)
-# gör även att man kan använda parametern `-P` till `docker run`, som automatiskt portmappar alla exponerade portar mot slumpade portar (kör `docker port <container-id> 3000` för att veta vilken slumpad port det blev)
-EXPOSE 3000
+# Expose the correct port for your app. This will be picked up by "Katalog" who
+# will make sure Nginx redirects to this port. 
+EXPOSE 9000
 
-CMD pm2 start --name app /app/src/server.js && pm2 logs app
+CMD node /app/server/server.js

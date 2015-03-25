@@ -1,6 +1,21 @@
 # XYZ Docker NodeJS #
 
-This image is an default docker image for NodeJS.
+This image is a default docker image for NodeJS.
+
+## Local development ##
+
+Just run the following commands
+
+    npm install
+    node server/server.js
+
+You should now see a statically served index.html file if you go to
+http://localhost:9000
+
+## Testing for live deploy ##
+
+Before deploying your code you can test it with a local docker installation
+by running the following commands
 
 **Build:** 
 
@@ -8,7 +23,7 @@ This image is an default docker image for NodeJS.
 
 **Run:** 
 
-    docker run -p 3000:3000 -it --rm --name my-running-app my-nodejs-app
+    docker run -p 9000:9000 -it --rm --name my-running-app my-nodejs-app
 
 
-In this case we run the application at port 3000 so don't forget to expose port 3000 in VirtualBox Manager.
+In this case we run the application at port 9000 so don't forget to expose port 9000 in VirtualBox Manager.

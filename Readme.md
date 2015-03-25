@@ -1,6 +1,21 @@
 # XYZ Docker NodeJS #
 
-This image is an default docker image for NodeJS.
+This image is a default docker image for NodeJS.
+
+## Local development ##
+
+Just run the following commands
+
+    npm install
+    node server/server.js
+
+You should now see a statically served index.html file if you go to
+http://localhost:9000
+
+## Testing for live deploy ##
+
+Before deploying your code you can test it with a local docker installation
+by running the following commands
 
 **Build:** 
 

@@ -13,6 +13,6 @@ WORKDIR /app
 
 # Expose the correct port for your app. This will be picked up by "Katalog" who
 # will make sure Nginx redirects to this port. 
-EXPOSE 3000
+EXPOSE 9000
 
-CMD node /app/src/server.js
+CMD node /app/server/server.js

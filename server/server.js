@@ -7,7 +7,8 @@ app.use('/', express.static(path.join(__dirname, 'dist/')));
 
 app.get('/kalle', function(req, res) {
     console.log("ASD");
-    res.send(JSON.stringify(req.headers));
+
+    res.send('Your email is: ' + req.headers['x-forwarded-email'] + ' and your accname: ' + req.headers['x-forwarded-user']);
 });
 
 var server = app.listen(9000, function () {

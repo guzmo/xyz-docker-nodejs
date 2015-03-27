@@ -3,14 +3,23 @@
         <tr>
             <th>Name</th>
             <th>Endpoint</th>
-            <th>Successful</th>
+            <th>Repository</th>
+            <th>Build succesful</th>
             <th>Number of Attempts</th>
+            <th>Last build</th>
+            <th>Pusher Name</th>
+            <th>Pusher Email</th>
+
         </tr>
         <tr ng-repeat="data in allData">
             <td>{{data.name}}</th>
-            <td>{{data.endpoint}}</td>
+            <td><a ng-href="xyz.softhouse.se/{{data.endpoint}}">{{data.endpoint}}</a></td>
+            <td>{{data.repo}}</td>
             <td>{{data.isSuccessful}}</td>
             <td>{{data.nrOfAttempts}}</td>
+            <td>{{data.buildAt}}</td>
+            <td>{{data.pusher.name}}</td>
+            <td>{{data.pusher.email}}</td>
         </tr>
     </table>
 </div>

@@ -1,11 +1,5 @@
-'use strict';
+var mainModule = angular.module('myApp', []);
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute']).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/'});
-}]).
-    controller("demoController", function(){
-        alert("alo");
-    });
+mainModule.controller('demoController', function() {
+    alert("hi");
+});

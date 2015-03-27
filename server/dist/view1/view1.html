@@ -1,0 +1,25 @@
+<div id="overviewTable" class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <tr>
+            <th>Name</th>
+            <th>Endpoint</th>
+            <th>Repository</th>
+            <th>Build succesful</th>
+            <th>Number of Attempts</th>
+            <th>Last build</th>
+            <th>Pusher Name</th>
+            <th>Pusher Email</th>
+
+        </tr>
+        <tr ng-repeat="data in allData">
+            <td>{{data.name}}</th>
+            <td><a ng-href="http://xyz.softhouse.se/{{data.endpoint}}" target="_blank">{{data.endpoint}}</a></td>
+            <td><a ng-href="{{data.repo}}" target="_blank">{{data.repo}}</a></td>
+            <td>{{data.isSuccessful}}</td>
+            <td>{{data.nrOfAttempts}}</td>
+            <td>{{data.buildAt}}</td>
+            <td>{{data.pusher.name}}</td>
+            <td>{{data.pusher.email}}</td>
+        </tr>
+    </table>
+</div>

@@ -14,7 +14,7 @@
         <tr ng-repeat="data in allData">
             <td>{{data.name}}</th>
             <td><a ng-href="http://xyz.softhouse.se/{{data.endpoint}}" target="_blank">{{data.endpoint}}</a></td>
-            <td>{{data.repo}}</td>
+            <td><a ng-href="{{data.repo}}" target="_blank">{{data.repo}}</a></td>
             <td>{{data.isSuccessful}}</td>
             <td>{{data.nrOfAttempts}}</td>
             <td>{{data.buildAt}}</td>

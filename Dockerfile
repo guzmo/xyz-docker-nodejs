@@ -1,5 +1,5 @@
 # Use the standard nodejs image as a base
-FROM dockerfile/nodejs
+FROM dockerfile/node
 
 # Install production dependencies.
 ADD package.json /app/package.json
